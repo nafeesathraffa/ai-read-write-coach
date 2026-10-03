@@ -8,16 +8,22 @@ Phase 0 (setup) → Phase 1 (model check)
 ## Status at a glance
 | Phase | Status |
 |---|---|
-| 0. Setup | In progress |
-| 1. Model check | Not started |
-| 2. Core services | Not started |
-| 3. Speaking loop | Not started |
-| 4. Deploy early | Not started |
-| 5. Evaluator test set | Not started |
-| 6. Demo data | Not started |
-| 7. Should-haves (writing, revision, trends) | Not started |
-| 8. Stretch (reading, learning agent) | Not started |
-| 9. Submission | Not started |
+| 0. Architecture, rubric, specifications, decisions | Done |
+| 1. Nebius/Nemotron capability testing | Blocked (waiting on credits) |
+| 2. Repository hygiene | Done |
+| 3. Neon PostgreSQL + SQLAlchemy + database foundation | Not started |
+| 4. Login + Demo account | Not started |
+| 5. AI client + fallback + usage monitoring | Not started |
+| 6. First Render deployment + health checks | Not started |
+| 7. Freeze rubric/schemas + evaluator testing | Not started |
+| 8. Speaking MVP | Not started |
+| 9. Speaking follow-up practice | Not started |
+| 10. Writing module | Not started |
+| 11. Learning agent + dashboard | Not started |
+| 12. Reading module | Not started |
+| 13. Reading + Speaking integration/polish | Not started |
+| 14. Rate limits, usage UI, demo evaluations, disclaimers | Not started |
+| 15. README, video, final checklist, submission preparation | Not started |
 
 ## Session log
 
