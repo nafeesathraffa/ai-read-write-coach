@@ -3,7 +3,7 @@
 Last updated: 2026-10-03
 
 ## Current phase
-Phase 0 (setup) → Phase 1 (model check)
+Phase 4 (Login + Demo account). Phase 1 still blocked on credits.
 
 ## Status at a glance
 | Phase | Status |
@@ -11,7 +11,7 @@ Phase 0 (setup) → Phase 1 (model check)
 | 0. Architecture, rubric, specifications, decisions | Done |
 | 1. Nebius/Nemotron capability testing | Blocked (waiting on credits) |
 | 2. Repository hygiene | Done |
-| 3. Neon PostgreSQL + SQLAlchemy + database foundation | Not started |
+| 3. Neon PostgreSQL + SQLAlchemy + database foundation | Done |
 | 4. Login + Demo account | Not started |
 | 5. AI client + fallback + usage monitoring | Not started |
 | 6. First Render deployment + health checks | Not started |
@@ -26,6 +26,41 @@ Phase 0 (setup) → Phase 1 (model check)
 | 15. README, video, final checklist, submission preparation | Not started |
 
 ## Session log
+
+### 2026-10-03 (Phase 3)
+**Done**
+- Phase 2 repository hygiene complete (.env.example, README title)
+- Neon Postgres project created; pooled and direct connection strings stored in .env
+- Installed sqlalchemy, psycopg[binary], python-dotenv
+- app/db.py: make_engine() with pool_pre_ping; pooled URL for the app, direct URL for setup
+- app/models.py: users, practice_sessions, attempts, evaluations, usage_events, crisis_events
+- scripts/create_tables.py creates the tables; all six confirmed in Neon
+- Insert / read / delete test on users passed
+
+**In progress**
+- None
+
+**Next**
+- Phase 4: Login + Demo account (decide D-05 first)
+- Phase 1 when credits arrive
+- Offline: normalize, evidence.py, metrics.py
+
+**Blockers**
+- Token Factory credits not yet received
+
+### 2026-10-03 (Phases 0-2)
+**Done**
+- Repo created and cloned
+- Docs, README, LICENSE, .gitignore, scripts/ created
+- docs/PROJECT_SPEC.md completed
+
+## Open decisions
+See the Decision log in docs/PROJECT_SPEC.md (§18).
+
+## Notes for later
+- Fill §12 of the spec with model IDs, JSON method, and response times after Phase 1
+- Add dates to the §16 timeline
+- Add the official rules link to §2
 
 ### 2026-10-03
 **Done**
