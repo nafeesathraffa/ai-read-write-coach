@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landing Page</title>
+</head>
+<body>
+  <h1>AI Reading, Writing and Speaking Coach</h1>
+  <p>
+      Practice reading, writing, and speaking with AI-guided activities
+      designed to help you build stronger communication skills through
+      feedback and repeated practice.
+  </p>
+
+  <p>
+      <strong>This is not an AI that does your work for you.</strong>
+      It helps you practice, reflect, and improve your own reading,
+      writing, and speaking.
+  </p>  
+  <form action="{{ url_for('auth.demo') }}" method="post">
+    <button type="submit">Try Demo</button>
+  </form>
+  <a href="{{ url_for('auth.register') }}">Register</a>
+  <a href="{{ url_for('auth.login') }}">Login</a>
+</body>
+</html>

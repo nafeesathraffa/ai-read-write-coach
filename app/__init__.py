@@ -1,6 +1,6 @@
 from dotenv import load_dotenv
 import os
-from flask import Flask, url_for
+from flask import Flask, url_for, render_template
 from .auth import bp
 from flask_login import LoginManager, login_required, current_user
 from .db import SessionLocal
@@ -24,8 +24,16 @@ def create_app():
       return db.get(User, (int(user_id)))
 
   @app.route("/")
-  @login_required
   def index():
-      return f'Hello, {current_user.username}!"  <a href={url_for("auth.logout")}>Log out</a> ' 
+    if current_user.is_authenticated:
+        message = f'Hello, {current_user.username}! <a href="{url_for("auth.logout")}">Log out</a>'
 
+        if current_user.is_demo:
+            message += " <p>The Demo account is read-only.</p>"
+
+        return message
+
+    else:
+        return render_template("landing.html")
+  
   return app

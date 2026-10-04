@@ -19,6 +19,15 @@ def register():
     if len(password) < 8:
       flash('Password must be at least 8 characters long.')
       return redirect(url_for('auth.register'))
+    if username == "demo":
+      flash('Username "demo" is reserved.')
+      return redirect(url_for('auth.register'))
+    if username == "DEMO":
+      flash('Username "DEMO" is reserved.')
+      return redirect(url_for('auth.register'))
+    if username == "Demo":
+      flash('Username "Demo" is reserved.')
+      return redirect(url_for('auth.register')) 
 
     with SessionLocal() as db:
       if db.query(User).filter_by(username=username).first():
@@ -54,4 +63,16 @@ def logout():
   logout_user()
   flash('You have been logged out.')
   return redirect(url_for('auth.login'))
+
+@bp.route('/demo', methods=['POST'])
+def demo():
+  with SessionLocal() as db:
+    demo_user = db.query(User).filter_by(is_demo=True).first()
+    if demo_user:
+      login_user(demo_user)
+      return redirect(url_for('index'))
+    else:
+      flash('Demo user not found. Please contact support.')
+      return redirect(url_for('auth.login'))
+
     
