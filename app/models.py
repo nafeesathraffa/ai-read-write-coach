@@ -1,11 +1,12 @@
 from sqlalchemy import String, Text, Boolean, DateTime, func, ForeignKey, Integer, JSON
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
 from datetime import datetime
+from flask_login import UserMixin
 
 class Base(DeclarativeBase):
   pass
 
-class User(Base):
+class User(UserMixin, Base):
   __tablename__ = 'users'
 
   id: Mapped[int] = mapped_column(primary_key=True)
